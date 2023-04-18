@@ -41,7 +41,7 @@ def fibonacci_search(S, x):
         f1 = f2
         f2 = f1 + f0
     while(f2 > 1):
-        index = min(start + f1, size - 1)
+        index = min(start + f0, size - 1)
         if S[index] < x:
             f2 = f1
             f1 = f0
