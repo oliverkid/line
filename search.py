@@ -12,7 +12,7 @@ def get_mean_time(S,x,search):
 def linear_search(S,x):
     for i in range(0,len(S)):
         if S[i] == x:
-            return True
+            return i
     return False
 
 def binary_search(S,x):
@@ -21,7 +21,7 @@ def binary_search(S,x):
     while low <= high:
         mid = low + (high - low)//2
         if S[mid] == x:
-            return True
+            return mid
         elif S[mid] < x:
             low = mid + 1
         else:
@@ -30,16 +30,18 @@ def binary_search(S,x):
 
 def fibonacci_search(S, x):
     size = len(S)
+    if size == 0:
+        return False
     start = -1
     f0 = 0
     f1 = 1
-    f2 = 1
+    f2 = f0 + f1
     while(f2 < size):
         f0 = f1
         f1 = f2
         f2 = f1 + f0
     while(f2 > 1):
-        index = min(start + f0, size - 1)
+        index = min(start + f1, size - 1)
         if S[index] < x:
             f2 = f1
             f1 = f0
@@ -50,10 +52,11 @@ def fibonacci_search(S, x):
             f1 = f1 - f0
             f0 = f2 - f1
         else:
-            return True
-    if (f1) and (S[size - 1] == x):
-        return True
-    return False
+            return index
+    if f1==1 and S[start+1] == x:
+        return start + 1
+    else:
+        return False
 
 t_linear = []
 t_binary = []
