@@ -66,7 +66,6 @@ for i in range(100):
     t_binary.append(get_mean_time(S,x,binary_search))
     t_fibonacci.append(get_mean_time(S,x,fibonacci_search))
     size+=10
-
 print("List(10 to 1000 size) average execution times: ")
 print("linear_search: ",t_linear)
 print("binary_search: ",t_binary)
