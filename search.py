@@ -60,12 +60,13 @@ t_binary = []
 t_fibonacci = []
 size = 10
 for i in range(100):
-    S = sorted([random.randint(-100,100) for j in range(size)])
-    x = random.randint(-100,100)
+    S = sorted([random.randint(-10000,10000) for j in range(size)])
+    x = random.randint(-10000,10000)
     t_linear.append(get_mean_time(S,x,linear_search))
     t_binary.append(get_mean_time(S,x,binary_search))
     t_fibonacci.append(get_mean_time(S,x,fibonacci_search))
     size+=10
+
 print("List(10 to 1000 size) average execution times: ")
 print("linear_search: ",t_linear)
 print("binary_search: ",t_binary)
