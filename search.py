@@ -53,10 +53,9 @@ def fibonacci_search(S, x):
             f0 = f2 - f1
         else:
             return index
-    if f1==1 and S[start+1] == x:
-        return start + 1
-    else:
-        return False
+    if (f1 and S[size-1] == x):
+        return size-1
+    return False
 
 t_linear = []
 t_binary = []
