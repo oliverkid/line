@@ -4,7 +4,7 @@ import random
 def get_mean_time(S,x,search):
     t_start = time.time()
     for i in range(5):
-        search(S,x)
+        search(S[i],x[i])
     t_end = time.time()
     t_total = t_end - t_start
     return t_total/5
@@ -62,8 +62,8 @@ t_binary = []
 t_fibonacci = []
 size = 10
 for i in range(100):
-    S = sorted([random.randint(-10000,10000) for j in range(size)])
-    x = random.randint(-10000,10000)
+    S = sorted([[random.randint(100,10000) for j in range(size)] for k in range(5)])
+    x = [random.randint(100,10000) for k in range(5)]
     t_linear.append(get_mean_time(S,x,linear_search))
     t_binary.append(get_mean_time(S,x,binary_search))
     t_fibonacci.append(get_mean_time(S,x,fibonacci_search))
