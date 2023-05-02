@@ -40,6 +40,8 @@ plt.show()
 
 
 #Question 2
+import sys
+sys.setrecursionlimit(90)
 def fibonacci_recursive(n):
   if n==0 or n==1:
     return n
