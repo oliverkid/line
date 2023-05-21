@@ -17,7 +17,7 @@ def MatrixChainOrder0(p,n):
         s[i][j] = k 
     return _min
   min_scalar_multiplications = matrix_chain_recursive(1, n-1)
-  return min_scalar_multiplications,s
+  return min_scalar_multiplications, s
 
 #Dynamic Programming
 def matrixChainOrder1(p,n):
